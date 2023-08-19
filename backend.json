@@ -1,0 +1,28 @@
+{
+  "IXE-GOI": {
+    "arrival": "IXE",
+    "date": "20230821",
+    "departure": "GOI",
+    "adults": 1,
+    "children": 0,
+    "infants": 0,
+    "cabinClass": "Economy",
+    "tripType": "one-way",
+    "flights": [
+      {
+        "flightNumber": "AI202",
+        "airline": "Air India",
+        "departureTime": "08:00 AM",
+        "arrivalTime": "10:00 AM",
+        "price": "2000"
+      },
+      {
+        "flightNumber": "6E532",
+        "airline": "IndiGo",
+        "departureTime": "09:30 AM",
+        "arrivalTime": "11:30 AM",
+        "price": "2200"
+      }
+    ]
+  }
+}

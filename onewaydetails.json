@@ -1,0 +1,88 @@
+[
+    {
+      "flightNumber": "AI202",
+      "airline": "Air India",
+      "departureTime": "08:00 AM",
+      "arrivalTime": "10:00 AM",
+      "price": "2050"
+    },
+    {
+      "flightNumber": "6E532",
+      "airline": "IndiGo",
+      "departureTime": "09:30 AM",
+      "arrivalTime": "11:30 AM",
+      "price": "2200"
+    },
+    {
+        "flightNumber": "AI301",
+        "airline": "Spicejet",
+        "departureTime": "07:00 AM",
+        "arrivalTime": "11:00 AM",
+        "price": "3000"
+      },
+      {
+        "flightNumber": "6E524",
+        "airline": "vistara",
+        "departureTime": "07:30 AM",
+        "arrivalTime": "1:30 AM",
+        "price": "2300"
+      },
+      {
+        "flightNumber": "AI292",
+        "airline": "Saudia",
+        "departureTime": "09:00 AM",
+        "arrivalTime": "12:00 AM",
+        "price": "2750"
+      },
+      {
+        "flightNumber": "6E332",
+        "airline": "Ethiad Airways",
+        "departureTime": "03:30 AM",
+        "arrivalTime": "10:30 AM",
+        "price": "2600"
+      },
+      {
+        "flightNumber": "AI102",
+        "airline": "originiar",
+        "departureTime": "08:10 AM",
+        "arrivalTime": "10:30 AM",
+        "price": "2700"
+      },
+      {
+        "flightNumber": "AI902",
+        "airline": "AirAsia India",
+        "departureTime": "02:00 AM",
+        "arrivalTime": "10:00 AM",
+        "price": "2800"
+      },
+      {
+        "flightNumber": "AI555",
+        "airline": "Aliance Air",
+        "departureTime": "09:00 AM",
+        "arrivalTime": "06:00 AM",
+        "price": "2120"
+      },
+      {
+        "flightNumber": "Al635",
+        "airline": "Quatar Airways",
+        "departureTime": "12:00 AM",
+        "arrivalTime": "05:00 AM",
+        "price": "3000"
+      },
+      {
+        "flightNumber": "AI637",
+        "airline": "Air Arabia",
+        "departureTime": "06:30 AM",
+        "arrivalTime": "11:00 AM",
+        "price": "4000"
+      },
+      {
+        "flightNumber": "AI272",
+        "airline": "Srilankan Airlines",
+        "departureTime": "04:00 AM",
+        "arrivalTime": "09:30 AM",
+        "price": "3500"
+      }
+    
+  ]
+  
