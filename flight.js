@@ -75,7 +75,7 @@ app.post('/flight-results',async (req, res) => {
   
   const requestData = req.body;
 
-  const flightResult = new FlightResult({
+  const flightResult = new flightResult({
     departure: requestData.departure,
     arrival: requestData.arrival,
     date: new Date(requestData.date),
