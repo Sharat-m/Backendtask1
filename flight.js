@@ -70,7 +70,8 @@ app.get('/flight-results', (req, res) => {
 
 //step 2: post request
 app.post('/flight-results',async (req, res) => {
-
+res.status(200).json({ error: 'success' });
+return;
   try {
   
   const requestData = req.body;
