@@ -34,7 +34,7 @@
         "airline_code": "312",
         "cabin_class": "Economy",
         "flight_duration": "65",
-        "price" : "7172"
+        "price" : "9782"
       }
     },
     {
@@ -48,12 +48,12 @@
       "arrival_time": "17:25",
       "departure_airport_name": "Mangaluru Airport",
       "arrival_airport_name": "Kempegowda International Airport",
-      "flight_number": "6EAE388",
+      "flight_number": "6EA6859",
       "airline": "Indigo",
       "airline_code": "312",
       "cabin_class": "Economy",
-      "flight_duration": "60",
-      "price" : "10611"
+      "flight_duration": "55",
+      "price" : "11487"
     }
       },
       {
@@ -63,16 +63,16 @@
       "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
       "flight_details":
        {
-        "departure_time": "16:35",
-        "arrival_time": "17:25",
+        "departure_time": "21:50",
+        "arrival_time": "22:45",
         "departure_airport_name": "Mangaluru Airport",
         "arrival_airport_name": "Kempegowda International Airport",
         "flight_number": "6EAE388",
         "airline": "Indigo",
         "airline_code": "312",
         "cabin_class": "Economy",
-        "flight_duration": "60",
-        "price" : "10611"
+        "flight_duration": "55",
+        "price" : "11487"
       }
       },
       {
@@ -82,8 +82,8 @@
       "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
       "flight_details":
        {
-        "departure_time": "16:35",
-        "arrival_time": "17:25",
+        "departure_time": "21:05",
+        "arrival_time": "22:55",
         "departure_airport_name": "Mangaluru Airport",
         "arrival_airport_name": "Kempegowda International Airport",
         "flight_number": "6EAE388",
@@ -91,58 +91,158 @@
         "airline_code": "312",
         "cabin_class": "Economy",
         "flight_duration": "60",
-        "price" : "11189"
+        "price" : "14069"
+      }
+      },
+      { "departure_place": "Mangaluru",
+      "arrival_place": "Bengaluru",
+      "departure_date": "2023-08-21",
+      "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+      "flight_details":
+       {
+        "departure_time": "18:35",
+        "arrival_time": "19:25",
+        "departure_airport_name": "Mangaluru Airport",
+        "arrival_airport_name": "Kempegowda International Airport",
+        "flight_number": "6EAE388",
+        "airline": "Air India",
+        "airline_code": "312",
+        "cabin_class": "Economy",
+        "flight_duration": "50",
+        "price" : "12500"
       }
       },
       {
-        "flightNumber": "6E332",
-        "airline": "Ethiad Airways",
-        "departureTime": "03:30 AM",
-        "arrivalTime": "10:30 AM",
-        "price": "2600"
+        "departure_place": "Mangaluru",
+        "arrival_place": "Bengaluru",
+        "departure_date": "2023-08-21",
+        "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+        "flight_details":
+         {
+          "departure_time": "14:50",
+          "arrival_time": "16:35",
+          "departure_airport_name": "Mangaluru Airport",
+          "arrival_airport_name": "Kempegowda International Airport",
+          "flight_number": "6EAE388",
+          "airline": "Air India",
+          "airline_code": "312",
+          "cabin_class": "Economy",
+          "flight_duration": "60",
+          "price" : "12950"
+        }
       },
       {
-        "flightNumber": "AI102",
-        "airline": "originiar",
-        "departureTime": "08:10 AM",
-        "arrivalTime": "10:30 AM",
-        "price": "2700"
+        "departure_place": "Mangaluru",
+        "arrival_place": "Bengaluru",
+        "departure_date": "2023-08-21",
+        "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+        "flight_details":
+         {
+          "departure_time": "16:35",
+          "arrival_time": "17:25",
+          "departure_airport_name": "Mangaluru Airport",
+          "arrival_airport_name": "Kempegowda International Airport",
+          "flight_number": "6EAE388",
+          "airline": "Air India",
+          "airline_code": "312",
+          "cabin_class": "Economy",
+          "flight_duration": "60",
+          "price" : "13100"
+        }
       },
       {
-        "flightNumber": "AI902",
-        "airline": "AirAsia India",
-        "departureTime": "02:00 AM",
-        "arrivalTime": "10:00 AM",
-        "price": "2800"
+        "departure_place": "Mangaluru",
+        "arrival_place": "Bengaluru",
+        "departure_date": "2023-08-21",
+        "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+        "flight_details":
+         {
+          "departure_time": "16:35",
+          "arrival_time": "17:25",
+          "departure_airport_name": "Mangaluru Airport",
+          "arrival_airport_name": "Kempegowda International Airport",
+          "flight_number": "6EAE388",
+          "airline": "Air India",
+          "airline_code": "312",
+          "cabin_class": "Economy",
+          "flight_duration": "60",
+          "price" : "13450"
+        }
       },
       {
-        "flightNumber": "AI555",
-        "airline": "Aliance Air",
-        "departureTime": "09:00 AM",
-        "arrivalTime": "06:00 AM",
-        "price": "2120"
+        "departure_place": "Mangaluru",
+        "arrival_place": "Bengaluru",
+        "departure_date": "2023-08-21",
+        "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+        "flight_details":
+         {
+          "departure_time": "16:35",
+          "arrival_time": "17:25",
+          "departure_airport_name": "Mangaluru Airport",
+          "arrival_airport_name": "Kempegowda International Airport",
+          "flight_number": "6EAE388",
+          "airline": "Air India",
+          "airline_code": "312",
+          "cabin_class": "Economy",
+          "flight_duration": "60",
+          "price" : "13780"
+        }
       },
       {
-        "flightNumber": "Al635",
-        "airline": "Quatar Airways",
-        "departureTime": "12:00 AM",
-        "arrivalTime": "05:00 AM",
-        "price": "3000"
+        "departure_place": "Mangaluru",
+        "arrival_place": "Bengaluru",
+        "departure_date": "2023-08-21",
+        "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+        "flight_details":
+         {
+          "departure_time": "16:35",
+          "arrival_time": "17:25",
+          "departure_airport_name": "Mangaluru Airport",
+          "arrival_airport_name": "Kempegowda International Airport",
+          "flight_number": "6EAE388",
+          "airline": "Air India",
+          "airline_code": "312",
+          "cabin_class": "Economy",
+          "flight_duration": "60",
+          "price" : "14100"
+        }
       },
       {
-        "flightNumber": "AI637",
-        "airline": "Air Arabia",
-        "departureTime": "06:30 AM",
-        "arrivalTime": "11:00 AM",
-        "price": "4000"
-      },
-      {
-        "flightNumber": "AI272",
-        "airline": "Srilankan Airlines",
-        "departureTime": "04:00 AM",
-        "arrivalTime": "09:30 AM",
-        "price": "3500"
+        "departure_place": "Mangaluru",
+        "arrival_place": "Bengaluru",
+        "departure_date": "2023-08-21",
+        "airline_logo": "https://images.kiwi.com/airlines/128/6E.png",
+        "flight_details": {
+          "departure_time": "16:35",
+          "arrival_time": "17:25",
+          "departure_airport_name": "Mangaluru Airport",
+          "arrival_airport_name": "mumbai",
+          "flight_number": "6EAE388",
+          "airline": "Air India",
+          "airline_code": "312",
+          "cabin_class": "Economy",
+          "flight_duration": "60",
+          "price": "14650"
+        },
+        "layover": [
+          {
+            "layover_duration": "600"
+          },
+          {
+            "departure_time": "16:35",
+            "arrival_time": "17:25",
+            "departure_airport_name": "Mumbai",
+            "arrival_airport_name": "Kempegowda International Airport",
+            "flight_number": "6EAE388",
+            "airline": "Air India",
+            "airline_code": "312",
+            "cabin_class": "Economy",
+            "flight_duration": "60",
+            "price": "14650"
+          }
+        ]
       }
+      
     
   ]
   
