@@ -17,15 +17,15 @@ app.get('/flight-results', (req, res) => {
   });
 
 // step1 :get request
-//https://www.farefirst.com/flight-results/IXE-20230821-BLR?adults=1&children=0&infants=0&cabin_class=Y&trip_type=one-way
+//https://localhost:3000/flight-results/IXE-20230821-GOI?adults=1&children=0&infants=0&cabin_class=Y&trip_type=one-way
   app.get('/flight-results/:departure-:date-:destination', (req, res) => {
     const departure = req.params.departure; // IXE
     const date = req.params.date;       //20230821
     const destination = req.params.destination;   // GOI
 
-    console.log("req param is "+JSON.stringify(req.params, null, 4));
+    // console.log("req param is "+JSON.stringify(req.params, null, 4));
 
-    console.log("\n req query is "+JSON.stringify(req.query, null, 4));
+    // console.log("\n req query is "+JSON.stringify(req.query, null, 4));
 
 // if(req.query.adults){
 //  if(req.query.adults>0)
@@ -94,7 +94,7 @@ app.post('/flight-results', (req, res) => {
              {
                 const onewayResult = {
                     requestData,
-                    "oneway-details": oneWay
+                    "oneway_details": oneWay
                 };
                 res.json(onewayResult);
             }
@@ -102,7 +102,7 @@ app.post('/flight-results', (req, res) => {
               {
                 const twowayResult = {
                     requestData,
-                    "twoway-details": twoWay
+                    "twoway_details": twoWay
                 };
                 res.json(twowayResult);
             } 
