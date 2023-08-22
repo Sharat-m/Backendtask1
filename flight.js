@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
-mongoose.connect("mongodb+srv://sharat:QPvQvHiHjc0CAruG@farefirstcluster0.cbhnpvo.mongodb.net/fligthresult?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://sharat:QPvQvHiHjc0CAruG@farefirstcluster0.cbhnpvo.mongodb.net/flightresult?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -175,112 +175,4 @@ app.listen(port, () => {
 //   "infants": 1,
 //   "cabin_class": "Economy",
 //   "trip_type": "one-way"
-// }
-
-// // step 2: post request
-// app.post('/flight-results', (req, res) => {
-//     const requestData = req.body; 
-//     // const flightData = require('./onewaydetails.json'); //importing flight details file
-//   //combine the requestdata and flightdetail
-// //   const generatedResults = { 
-// //     requestData, 
-// //     "details" : flightData
-// // }
-// // // res.json({ message: 'Flight results generated successfully' });
-// // res.json(generatedResults);
-// // });
-
-
-// // Get current date in "YYYY-MM-DD" format in UTC
-// const currentDate = new Date().toISOString().split('T')[0];
-
-// if (requestData.date >= currentDate) {
-//     const totalTravelers = requestData.adults + requestData.children + requestData.infants;//9
-//     const adults = requestData.adults;//0
-//     const children = requestData.children;//0
-//     const infants = requestData.infants;//0
-   
-//    if (totalTravelers >= 1 && totalTravelers <= 9)
-//     {
-//    if (infants > adults || infants > 4)
-//    {
-//        res.status(400).json({ error: `Invalid numbers. For ${adults} adult, only ${adults} infant is allowed.` });
-//        return;
-//    }  
-//   //  if (adults === 9 && (infants > 0 || children > 0))
-//    // {
-//    //     res.status(400).json({ error: 'Invalid combination of totalTravelers. For 9 adults, infants and children should be 0.' });
-//    //     return;
-//    // }
-// // if (adults > 9 || children > 8 || infants > 5)
-//      //  {
-//      //   res.status(400).json({ error: 'Invalid number of totalTravelers. Adults, children, and infants must not exceed 9 each.' });
-//      //  }
-// //    if (adults === 2 && infants > 2 && children > 0)
-// //     {
-// //      res.status(400).json({ error: 'Invalid number of infants. For 2 adult, only 2 infant is allowed.' });
-// //      return;
-// //  }
-// //  if (adults === 3 && infants > 3 && children > 0)
-// //     {
-// //      res.status(400).json({ error: 'Invalid number of infants. For 3 adult, only 3 infant is allowed.' });
-// //      return;
-// //  }
-// //  if (adults === 4 && infants > 4 && children > 0)
-// //  {
-// //   res.status(400).json({ error: 'Invalid number of infants. For 4 adult, only 4 infant is allowed.' });
-// //   return;
-// //  }
-// //  if (infants > 4)
-// //  {
-// //     res.status(400).json({ error: 'Invalid number of infants. Maximum 4 infants are  allowed.' });v  
-// //     return;
-// // }
-//    }else {
-//      res.status(400).json({ error: 'Invalid number of totalTravelers. Total totalTravelers must be between 1 and 9.' });
-//      return;
-//    }
-
-//    const cabin_class = req.body.cabin_class;
-// console.log(cabin_class);
-// if (['Economy', 'Premium', 'First Class', 'Business'].includes(cabin_class)) {
-//     res.json({ message: `cabin class valid` }); // Use cabin_class instead of cabinclass
-// } else {
-//     res.status(400).json({ error: 'Invalid cabin' });
-// }
-//     // Your existing code for trip type logic and response here
-// //Trip type
-// const oneWay = require('./onewaydetails.json');
-// const twoWay = require('./twowaydetails.json');
-//     const trip_type=req.body.trip_type;  //checking the trip type
-
-//    if(trip_type === 'one-way')
-//    {
-//     const onewayResult = { 
-//         requestData,
-//         "oneway-details" : oneWay
-//     };
-//     res.json(onewayResult);
-//    }
-//    else if(trip_type === 'two-way')
-//    {
-//     const twowayResult = { 
-//         requestData,
-//         "twoway-details" : twoWay
-//     };
-//     res.json(twowayResult);
-//    }
-//    else{
-//     res.status(400).json({error: 'invalid trip type'})
-//    }
-   
-// } else {
-//     // Date is not valid, return an error response
-//     res.status(400).json({ error: 'Invalid date. Date should be today or the next upcoming day.' });
-// return;
-//   }
-
-//   app.listen(port, () => {
-//     console.log(`Server is running on port ${port}`);
-//   });
 // }
