@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const FlightResult = require('./FlightResult');
+const FlightResult = require('./flightResults');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -75,7 +75,7 @@ app.post('/flight-results',async (req, res) => {
   
   const requestData = req.body;
 
-  const flightResult = new flightResult({
+  const flightResult = new FlightResult({
     departure: requestData.departure,
     arrival: requestData.arrival,
     date: new Date(requestData.date),
