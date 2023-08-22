@@ -1,9 +1,24 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const FlightResult = require('./FlightResult');
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+mongoose.connect("mongodb+srv://sharat:QPvQvHiHjc0CAruG@farefirstcluster0.cbhnpvo.mongodb.net/fligthresult?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
+
+mongoose.set('strictQuery', false);
 app.use(bodyParser.json());//parse the data in request body
+
+
+
 
 app.get('/flight-results', (req, res) => {
     res.send('Welcome to the Flight Results API');
@@ -54,15 +69,30 @@ app.get('/flight-results', (req, res) => {
 
 
 //step 2: post request
-app.post('/flight-results', (req, res) => {
+app.post('/flight-results',async (req, res) => {
+
+  try {
+  
   const requestData = req.body;
+
+  const flightResult = new FlightResult({
+    departure: requestData.departure,
+    arrival: requestData.arrival,
+    date: new Date(requestData.date),
+    adults: requestData.adults,
+    children: requestData.children,
+    infants: requestData.infants,
+    cabin_class: requestData.cabin_class,
+    trip_type: requestData.trip_type,
+  });
+
+  await flightResult.save();
   // Getting current date in "YYYY-MM-DD" 
   const currentDate = new Date().toISOString().split('T')[0];
   // console.log(currentDate);
 
   if (requestData.date >= currentDate)
    { 
-
     // totalTravelers validations and generating response
     const totalTravelers = requestData.adults + requestData.children + requestData.infants;//9
     // console.log(totalTravelers);
@@ -111,24 +141,21 @@ app.post('/flight-results', (req, res) => {
                 res.status(400).json({ error: `Entered invalid ${trip_type}. Please enter two-way or one-way`});
             }
         }
-        // console.log(infants + adults);
-    //if the date is true then enter
-      // Cabin class verification
-      
   }
   else 
   {
       res.status(400).json({ error: 'Invalid number of TotalTravelers. Total totalTravelers must be between 1 and 9.' });
-    // res.status(400).json({ error: `Invalid cabin class ${cabin_class}. Enter 'Economy', 'Premium', 'First Class', 'Business' ` });
  }
- 
- 
 }
 else 
 {
    // Date is not valid, error response
    res.status(400).json({ error: `Invalid date. Date should be ${currentDate} or the next upcoming day.`});
 }
+} catch (error) {
+  console.error("Error processing the request:", error);
+    res.status(500).json({ error: 'An error occurred while processing the request.' });
+  }
 });
 
 
@@ -137,11 +164,6 @@ app.listen(port, () => {
 });
 
 
-
-
-// ],
-// layover[60]
-// ]
 
 //post request body check in postman api tool
 // {
