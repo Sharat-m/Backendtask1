@@ -21,9 +21,12 @@ app.post("/flight-results", async (req, res) => {
   // Getting current date in "YYYY-MM-DD"
   // console.log(typeof currentDate);
   const requestData = req.body;
-  const currentDate = new Date().toISOString().split("T")[0];
-  const userdate = requestData.date;
-  if (userdate.localeCompare(currentDate) === 0) {
+  const todayMidnight=new Date();
+  todayMidnight.setHours(0,0,0);
+  const currentDate = todayMidnight.getTime();
+  const userdate = new Date(requestData.date).getTime();
+
+  if (userdate>=currentDate) {//debug
     // console.log(userdate.localeCompare(currentDate));
     // totalTravelers validations and generating response
     const totalTravelers =
