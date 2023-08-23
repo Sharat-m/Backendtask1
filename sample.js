@@ -1,4 +1,44 @@
-// app.post('/flight-results', (req, res) => {
+
+// // step1 :get request
+// //https://localhost:3000/flight-results/IXE-20230821-GOI?adults=1&children=0&infants=0&cabin_class=Y&trip_type=one-way
+// app.get("/flight-results/:departure-:date-:destination", (req, res) => {
+//     const departure = req.params.departure; // IXE
+//     const date = req.params.date; //20230821
+//     const destination = req.params.destination; // GOI
+  
+//     // console.log("req param is "+JSON.stringify(req.params, null, 4));
+  
+//     // console.log("\n req query is "+JSON.stringify(req.query, null, 4));
+  
+//     // if(req.query.adults){
+//     //  if(req.query.adults>0)
+  
+//     // }else{
+//     //   //user did not send
+//     // }
+//     const adults = req.query.adults || 0;
+//     //   const children = req.query.children || 0 ;
+//     //   const infants = req.query.infants  || 0 ;
+//     //   const cabin_class = req.query.cabin_class || 'Economy';
+//     //   const trip_type = req.query.trip_type || 'one-way';
+  
+//     const flightData = require("./backend.json"); //import the backend data file
+//     // Check if the requested departure and date exist in the data
+//     if (flightData[`${departure}-${destination}`]) {
+//       const flightResults = flightData[`${departure}-${destination}`];
+//       res.json(flightResults);
+//     } else {
+//       res.status(404).json({ error: "Flight results not found" });
+//     }
+//   });
+
+
+
+
+
+
+
+//app.post('/flight-results', (req, res) => {
 //     const requestData = req.body;
 //      const travelers = requestData.adults + requestData.children + requestData.infants;
 //      const adults = requestData.adults;
