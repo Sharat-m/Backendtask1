@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.json()); //parse the data in request body
@@ -53,8 +54,11 @@ app.post("/flight-results", async (req, res) => {
       } else {
         // Trip type
         // Checking  trip type and generate response
-        const oneWay = require("./onewaydetails.json");
-        const twoWay = require("./twowaydetails.json");
+       // const oneWay = require("./onewaydetails.json");
+      //  const twoWay = require("./twowaydetails.json");
+      const oneWay = fsReadFileSynchToArray("./onewaydetails.json");
+      const twoWay = fsReadFileSynchToArray("./twowaydetails.json");
+        
         const trip_type = requestData.trip_type;
         // console.log(typeof trip_type);
         if (trip_type === "one-way") {
@@ -103,3 +107,8 @@ app.listen(port, () => {
 //   "cabin_class": "Economy",
 //   "trip_type": "one-way"
 // }
+
+function fsReadFileSynchToArray (filePath) {
+    var data = JSON.parse(fs.readFileSync(filePath));
+    return data;
+}
