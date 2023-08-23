@@ -22,10 +22,10 @@ app.post("/flight-results", async (req, res) => {
   // Getting current date in "YYYY-MM-DD"
   // console.log(typeof currentDate);
   const requestData = req.body;
-  const todayMidnight=new Date();
+  const todayMidnight=new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
   todayMidnight.setHours(0,0,0);
   const currentDate = todayMidnight.getTime();
-  const userdate = new Date(requestData.date).getTime();
+  const userdate = new Date(new Date(requestData.date).toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })).getTime();
 
   if (userdate>=currentDate) {//debug
     // console.log(userdate.localeCompare(currentDate));
