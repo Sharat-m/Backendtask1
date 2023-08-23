@@ -1,11 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors"); 
 const app = express();
 const port = process.env.PORT || 3000;
-
 app.use(bodyParser.json()); //parse the data in request body
-app.use(cors());
 
 app.get("/flight-results", (req, res) => {
   res.send("Welcome to the Flight Results API");
@@ -88,7 +85,6 @@ app.post("/flight-results", async (req, res) => {
     });
   }
 });
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

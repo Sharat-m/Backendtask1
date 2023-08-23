@@ -1,15 +1,16 @@
+[
 	{
-  "IXE-GOI": {
-    "arrival": "IXE",
-    "date": "20230821",
-    "departure": "GOI",
-    "adults": 1,
-    "children": 0,
-    "infants": 0,
-    "cabin_class": "Economy",
-    "trip_type": "one-way",
-    "flight_details": [
-				 {
+		"IXE-GOI": {
+			"arrival": "IXE",
+			"date": "20230821",
+			"departure": "GOI",
+			"adults": 1,
+			"children": 0,
+			"infants": 0,
+			"cabin_class": "Economy",
+			"trip_type": "one-way",
+			"flight_details": [
+				{
 					"departure_time": "06:50",
 					"arrival_time": "07:50",
 					"departure_airport_name": "Mangaluru Airport",
@@ -19,9 +20,9 @@
 					"airline_code": "312",
 					"cabin_class": "Economy",
 					"flight_duration": "60"
-		  	},
-      {
-        "departure_time": "06:50",
+				},
+				{
+					"departure_time": "06:50",
 					"arrival_time": "07:50",
 					"departure_airport_name": "Mangaluru Airport",
 					"arrival_airport_name": "Kempegowda International Airport",
@@ -30,7 +31,8 @@
 					"airline_code": "312",
 					"cabin_class": "Economy",
 					"flight_duration": "60"
-      }
-    ]
-  }
-}
+				}
+			]
+		}
+	}
+]
