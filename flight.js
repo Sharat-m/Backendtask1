@@ -19,8 +19,8 @@ app.get("/flight-results/status", (req, res) => {
 });
 //step 2: post request
 app.post("/flight-results", async (req, res) => {
-  res.status(200).json({ error: 'success' });
-  return;
+  // res.status(200).json({ error: 'success' });
+  // return;
   // Getting current date in "YYYY-MM-DD"
   // console.log(typeof currentDate);
   const requestData = req.body;
