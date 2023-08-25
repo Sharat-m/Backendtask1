@@ -1,9 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-var fs = require('fs');
+var fs = require("fs");
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(bodyParser.json()); //parse the data in request body
+app.use(bodyParser.json());
 
 app.get("/flight-results", (req, res) => {
   res.send("Welcome to the Flight Results API");
@@ -15,80 +15,72 @@ app.get("/flight-results/status", (req, res) => {
   };
   res.status(200).json(status);
 });
+
 //step 2: post request
 app.post("/flight-results", async (req, res) => {
-  // res.status(200).json({ error: 'success' });
-  // return;
-  // Getting current date in "YYYY-MM-DD"
-  // console.log(typeof currentDate);
   const requestData = req.body;
-  const todayMidnight=new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-  todayMidnight.setHours(0,0,0);
+  const todayMidnight = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+  );
+  todayMidnight.setHours(0, 0, 0);
   const currentDate = todayMidnight.getTime();
-  const userdate = new Date(new Date(requestData.date).toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })).getTime();
-
-  if (userdate>=currentDate) {//debug
-    // console.log(userdate.localeCompare(currentDate));
-    // totalTravelers validations and generating response
-    const totalTravelers =
-      requestData.adults + requestData.children + requestData.infants; //9
-    //  console.log(totalTravelers);
-    const adults = requestData.adults;
-    const infants = requestData.infants;
-    if (totalTravelers >= 1 && totalTravelers <= 9) {
-      if (infants > adults || infants > 4) {
-        res.status(400).json({
-          error: `Invalid numbers. For ${adults} adults, only ${adults} infant is allowed.`,
-        });
-      }
-      const cabin_class = req.body.cabin_class;
-      // console.log(cabin_class);
-      // console.log(typeof cabin_class);
-      if (
-        !["Economy", "Premium", "First Class", "Business"].includes(cabin_class)
-      ) {
-        res.status(400).json({
-          error: `Invalid cabin class ${cabin_class}. Enter 'Economy', 'Premium', 'First Class', 'Business' `,
-        });
-        // return;
-      } else {
-        // Trip type
-        // Checking  trip type and generate response
-       // const oneWay = require("./onewaydetails.json");
-      //  const twoWay = require("./twowaydetails.json");
-      const oneWay = fsReadFileSynchToArray("./onewaydetails.json");
-      const twoWay = fsReadFileSynchToArray("./twowaydetails.json");
-        
-        const trip_type = requestData.trip_type;
-        // console.log(typeof trip_type);
-        if (trip_type === "one-way") {
-          const onewayResult = {
-            requestData,
-            oneway_details: oneWay,
-          };
-          res.json(onewayResult);
-        } else if (trip_type === "two-way") {
-          const twowayResult = {
-            requestData,
-            twoway_details: twoWay,
-          };
-          res.json(twowayResult);
-        } else {
-          res.status(400).json({
-            error: `Entered invalid ${trip_type}. Please enter two-way or one-way`,
-          });
-        }
-      }
-    } else {
-      res.status(400).json({
-        error:
-          "Invalid number of TotalTravelers. Total totalTravelers must be between 1 and 9.",
-      });
-    }
-  } else {
-    // Date is not valid, error response
+  const userdate = new Date(
+    new Date(requestData.date).toLocaleString("en-US", {
+      timeZone: "Asia/Kolkata",
+    })
+  ).getTime();
+  //date
+  if (userdate < currentDate) {
     res.status(400).json({
-      error: `Invalid date. Date should be ${currentDate} or the next upcoming day.`,
+      error: `Invalid date. Date should be today or the next upcoming day.`,
+    });
+    return;
+  }
+//Travelers
+  var totalTravelers =
+    requestData.adults + requestData.children + requestData.infants; 
+  var adults = requestData.adults;
+  var children =requestData.children;
+  var infants = requestData.infants;
+
+  if (!(totalTravelers >= 1 && totalTravelers <= 9)) {
+    res.status(400).json({ error: `Invalid Total Travelers ${totalTravelers}` });
+    return;
+  }
+
+  if (infants > adults || infants > 4 || (adults === 0 && children >= 1)) {
+    res.status(400).json({ error: `Invalid Travelers. For ${adults} adults, only ${adults} infant is allowed.`,});
+    return;
+  }
+//cabin class
+  const cabin_class = req.body.cabin_class;
+  if (
+    !["Economy", "Premium Economy", "First Class", "Business"].includes(cabin_class)
+  ) {
+    res.status(400).json({
+      error: `Invalid cabin class ${cabin_class}. Enter 'Economy', 'Premium Economy', 'First Class', 'Business' `,
+    });
+    return;
+  }
+  //type:oneway and twoway
+  const oneWay = fsReadFileSynchToArray("./onewaydetails.json");
+  const twoWay = fsReadFileSynchToArray("./twowaydetails.json");
+  const trip_type = requestData.trip_type;
+  if (trip_type === "one-way") {
+    const onewayResult = {
+      requestData,
+      oneway_details: oneWay,
+    };
+    res.json(onewayResult);
+  } else if (trip_type === "two-way") {
+    const twowayResult = {
+      requestData,
+      twoway_details: twoWay,
+    };
+    res.json(twowayResult);
+  } else {
+    res.status(400).json({
+      error: `Entered invalid ${trip_type}. Please enter two-way or one-way`,
     });
   }
 });
@@ -96,6 +88,10 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+function fsReadFileSynchToArray(filePath) {
+  var data = JSON.parse(fs.readFileSync(filePath));
+  return data;
+}
 //post request body check in postman api tool
 // {
 //   "departure" :"BLR",
@@ -107,8 +103,3 @@ app.listen(port, () => {
 //   "cabin_class": "Economy",
 //   "trip_type": "one-way"
 // }
-
-function fsReadFileSynchToArray (filePath) {
-    var data = JSON.parse(fs.readFileSync(filePath));
-    return data;
-}
